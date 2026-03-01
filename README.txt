@@ -1,7 +1,7 @@
-﻿Credit Default Prediction using XGBoost
+# Credit Default Prediction using XGBoost
 
 
-Problem Statement
+### Problem Statement
 
 
 In this project we build a machine learning model to estimate Probability of Default (PD) on an imbalance credit dataset. The objective is to develop a robust classification model capable of ranking borrower risk and supporting credit approval.
@@ -9,7 +9,7 @@ In this project we build a machine learning model to estimate Probability of Def
 
 
 
-Dataset Overview
+### Dataset Overview
 
 
 * Binary target variable
@@ -20,7 +20,7 @@ Dataset Overview
 
 
 
-Project Workflow
+### Project Workflow
 
 
 The project is structured across three notebooks
@@ -31,7 +31,7 @@ The project is structured across three notebooks
 3. Final_Model_XGBoost.ipynb : Hyperparameter tuning with RandomizedSearchCV, leakage-safe threshold optimization using cross-validated predictions, final model evaluation, feature importance analysis, and SHAP-based interpretability.
 
 
-Modeling Approach
+### Modeling Approach
 * Selection of best performing baseline model on the basis of performance metrics, especially ROC AUC score and PR AUC score.
 * Stratified 80/20 train test split
 * Hyperparameter tuning via RandomizedSearchCV (5-fold cross-validation)
@@ -39,7 +39,7 @@ Modeling Approach
 * Evaluation using ROC-AUC and PR-AUC (appropriate for imbalanced classification)
 
 
-Final results 
+### Final results 
 Metric
 	Cross Validation Set
 	Test Set
@@ -54,7 +54,7 @@ Metric
 The close alignment between cross-validation and test performance indicates strong generalization and minimal overfitting.
 
 
-Key Insights
+### Key Insights
 
 
 * Feature importance analysis indicates that risk indicators provided by external sources (EXT_SOURCE 2,3) act as the most important features. The model correctly captures historical credit behaviour of borrowers as top contenders for default prediction.
@@ -66,6 +66,7 @@ Key Insights
 
 
 
-Interpretation & Business Relevance
+### Interpretation & Business Relevance
 The model demonstrates strong ranking ability and meaningful minority-class detection, making it suitable for credit risk prioritization and decision support.
+
 While threshold selection in production would typically be business cost-sensitive, this implementation provides a statistically sound modeling and evaluation framework.
